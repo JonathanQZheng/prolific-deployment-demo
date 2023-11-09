@@ -1,0 +1,206 @@
+crowdsource: "prolific"                 
+prolific_completion_code: "C10MIQTH" 
+
+template_name: Neologism MT Using Thresh
+template_label: Neologism MT Using Thresh
+template_description: English Neologism translation quality inspection
+
+database: 
+  type: firebase
+  project_id: mt-translation-f3caa
+  url: https://mt-translation-f3caa.firebaseio.com/
+  collection: thresh      # (default: thresh) The database to use, this must exist on the firestore
+  document: annotation    # (default: annotation) The document to use, this must exist on the firestore
+  field: main_s1p1 
+
+instructions: |
+  ## Neologism translation evaluation
+  Please make sure you select the category that best describes the translation quality of the entire sentence
+
+
+edits:
+  - name: good
+    label: Good Translation
+    enable_input: false
+    enable_output: false
+    color: green
+    icon: fa-check
+    annotation:
+      - name: severity
+        label: Severity
+        question: 'Rate the fluency of the translation:'
+        options: likert-3
+      - name: confidence
+        label: Confidence
+        question: What's your confidence on your choice?
+        options: likert-3
+  - name: incomprehensible
+    label: Incomprehensible
+    enable_input: false
+    enable_output: false
+    color: red
+    icon: fa-square-xmark
+    annotation:
+      - name: severity
+        label: Severity
+        question: >-
+          Rate the impact severity that this has on understanding the
+          translation and being an accurate translation:
+        options: likert-3
+      - name: confidence
+        label: Confidence
+        question: What's your confidence on your choice?
+        options: likert-3
+  - name: mistranslation
+    label: Mistranslation
+    enable_input: true
+    enable_output: true
+    color: brown
+    icon: fa-xmark
+    annotation:
+      - name: severity
+        label: Severity
+        question: >-
+          Rate the impact severity that this has on understanding the
+          translation and being an accurate translation:
+        options: likert-3
+      - name: confidence
+        label: Confidence
+        question: What's your confidence on your choice?
+        options: likert-3
+      - name: portion
+        label: Portion
+        question: Which part of the sentence is mainly mistranslated?
+        options:
+          - name: child_1
+            label: Neologism
+          - name: child_2
+            label: Rest of Sentence
+  - name: unnatural
+    label: Unnatural
+    enable_input: true
+    enable_output: true
+    color: grey
+    icon: fa-eye-slash
+    annotation:
+      - name: severity
+        label: Severity
+        question: >-
+          Rate the impact severity that this has on understanding the
+          translation and being an accurate translation:
+        options: likert-3
+      - name: confidence
+        label: Confidence
+        question: What's your confidence on your choice?
+        options: likert-3
+  - name: literal
+    label: Literal Translation
+    enable_input: true
+    enable_output: true
+    color: purple
+    icon: fa-arrows-left-right
+    annotation:
+      - name: severity
+        label: Severity
+        question: >-
+          Rate the impact severity that this has on understanding the
+          translation and being an accurate translation:
+        options: likert-3
+      - name: confidence
+        label: Confidence
+        question: What's your confidence on your choice?
+        options: likert-3
+  - name: partial
+    label: Partial Translation
+    enable_input: true
+    enable_output: true
+    color: orange
+    icon: fa-star-half
+    annotation:
+      - name: severity
+        label: Severity
+        question: >-
+          Rate the impact severity that this has on understanding the
+          translation and being an accurate translation:
+        options: likert-3
+      - name: confidence
+        label: Confidence
+        question: What's your confidence on your choice?
+        options: likert-3
+  - name: no_translation
+    label: No Translation
+    enable_input: true
+    enable_output: true
+    color: blue
+    icon: fa-copy
+    annotation:
+      - name: severity
+        label: Severity
+        question: >-
+          Rate the impact severity that this has on understanding the
+          translation and being an accurate translation:
+        options: likert-3
+      - name: confidence
+        label: Confidence
+        question: What's your confidence on your choice?
+        options: likert-3
+      - name: portion
+        label: Portion
+        question: Which part of the sentence is not translated?
+        options:
+          - name: child_1
+            label: Neologism
+          - name: child_2
+            label: Rest of Sentence
+interface_text:
+  landing_page:
+    header_text: Annotating with
+    drag_drop_begin: 'Drag &amp; drop, or '
+    drag_drop_underline: click here
+    drag_drop_after: ' to add an annotation file'
+    options_header: or
+    tutorial_link: See Tutorial
+    examples_link: View Example Data
+    builder_link: Customize this Template
+    paper_link: View Paper
+  comment_box:
+    label: Comment
+    placeholder: Comment on this HIT ...
+  typology:
+    source_label: Source
+    target_label: Target
+    context_label: Context
+    edit_unit_name: edit
+    edits_unit_name: edits
+    span_unit_name: span
+    spans_unit_name: spans
+  buttons:
+    save_label: Save
+    cancel_label: Cancel
+    add_edit_label: Add Edit
+    instructions_label: Instructions
+    show_context_label: Show Context
+    hide_context_label: Hide Context
+  hit_box:
+    hit_label: Hit
+  annotation_editor:
+    add_edit_header: Adding an Edit
+    select_edit_header: Select the Edit Category.
+    select_instructions: Select the text span from the
+    selected_label: Selected
+    annotating_edit_header: Annotating an Edit
+    composite_seletion_instructions: 'Click the edits that associated with '
+    composite_span_unification: with
+  adjudication:
+    highlight_label: Your Annotations
+  annotation_viewer:
+    header: Edit Annotations
+    not_annotated_text_1: this edit is not annotated yet, click
+    not_annotated_text_2: to start!
+  questions:
+    binary_yes: 'Yes'
+    binary_no: 'No'
+    likert_1: 1 - minor
+    likert_2: 2 - somewhat
+    likert_3: 3 - a lot
+    textbox_placeholder: Write your answer...
