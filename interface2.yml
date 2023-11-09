@@ -1,0 +1,193 @@
+crowdsource: prolific
+database:
+  collection: thresh
+  document: annotations
+  field: main_s1p2
+  project_id: mt-translation-f3caa
+  type: firebase
+  url: https://mt-translation-f3caa.firebaseio.com/
+edits:
+- annotation:
+  - label: Severity
+    name: severity
+    options: likert-3
+    question: 'Rate the fluency of the translation:'
+  - label: Confidence
+    name: confidence
+    options: likert-3
+    question: What's your confidence on your choice?
+  color: green
+  enable_input: false
+  enable_output: false
+  icon: fa-check
+  label: Good Translation
+  name: good
+- annotation:
+  - label: Severity
+    name: severity
+    options: likert-3
+    question: 'Rate the impact severity that this has on understanding the translation
+      and being an accurate translation:'
+  - label: Confidence
+    name: confidence
+    options: likert-3
+    question: What's your confidence on your choice?
+  color: red
+  enable_input: false
+  enable_output: false
+  icon: fa-square-xmark
+  label: Incomprehensible
+  name: incomprehensible
+- annotation:
+  - label: Severity
+    name: severity
+    options: likert-3
+    question: 'Rate the impact severity that this has on understanding the translation
+      and being an accurate translation:'
+  - label: Confidence
+    name: confidence
+    options: likert-3
+    question: What's your confidence on your choice?
+  - label: Portion
+    name: portion
+    options:
+    - label: Neologism
+      name: child_1
+    - label: Rest of Sentence
+      name: child_2
+    question: Which part of the sentence is mainly mistranslated?
+  color: brown
+  enable_input: true
+  enable_output: true
+  icon: fa-xmark
+  label: Mistranslation
+  name: mistranslation
+- annotation:
+  - label: Severity
+    name: severity
+    options: likert-3
+    question: 'Rate the impact severity that this has on understanding the translation
+      and being an accurate translation:'
+  - label: Confidence
+    name: confidence
+    options: likert-3
+    question: What's your confidence on your choice?
+  color: grey
+  enable_input: true
+  enable_output: true
+  icon: fa-eye-slash
+  label: Unnatural
+  name: unnatural
+- annotation:
+  - label: Severity
+    name: severity
+    options: likert-3
+    question: 'Rate the impact severity that this has on understanding the translation
+      and being an accurate translation:'
+  - label: Confidence
+    name: confidence
+    options: likert-3
+    question: What's your confidence on your choice?
+  color: purple
+  enable_input: true
+  enable_output: true
+  icon: fa-arrows-left-right
+  label: Literal Translation
+  name: literal
+- annotation:
+  - label: Severity
+    name: severity
+    options: likert-3
+    question: 'Rate the impact severity that this has on understanding the translation
+      and being an accurate translation:'
+  - label: Confidence
+    name: confidence
+    options: likert-3
+    question: What's your confidence on your choice?
+  color: orange
+  enable_input: true
+  enable_output: true
+  icon: fa-star-half
+  label: Partial Translation
+  name: partial
+- annotation:
+  - label: Severity
+    name: severity
+    options: likert-3
+    question: 'Rate the impact severity that this has on understanding the translation
+      and being an accurate translation:'
+  - label: Confidence
+    name: confidence
+    options: likert-3
+    question: What's your confidence on your choice?
+  - label: Portion
+    name: portion
+    options:
+    - label: Neologism
+      name: child_1
+    - label: Rest of Sentence
+      name: child_2
+    question: Which part of the sentence is not translated?
+  color: blue
+  enable_input: true
+  enable_output: true
+  icon: fa-copy
+  label: No Translation
+  name: no_translation
+instructions: TESTESTESTST
+interface_text:
+  adjudication:
+    highlight_label: Your Annotations
+  annotation_editor:
+    add_edit_header: Adding an Edit
+    annotating_edit_header: Annotating an Edit
+    composite_seletion_instructions: 'Click the edits that associated with '
+    composite_span_unification: with
+    select_edit_header: Select the Edit Category.
+    select_instructions: Select the text span from the
+    selected_label: Selected
+  annotation_viewer:
+    header: Edit Annotations
+    not_annotated_text_1: this edit is not annotated yet, click
+    not_annotated_text_2: to start!
+  buttons:
+    add_edit_label: Add Edit
+    cancel_label: Cancel
+    hide_context_label: Hide Context
+    instructions_label: Instructions
+    save_label: Save
+    show_context_label: Show Context
+  comment_box:
+    label: Comment
+    placeholder: Comment on this HIT ...
+  hit_box:
+    hit_label: Hit
+  landing_page:
+    builder_link: Customize this Template
+    drag_drop_after: ' to add an annotation file'
+    drag_drop_begin: 'Drag &amp; drop, or '
+    drag_drop_underline: click here
+    examples_link: View Example Data
+    header_text: Annotating with
+    options_header: or
+    paper_link: View Paper
+    tutorial_link: See Tutorial
+  questions:
+    binary_no: 'No'
+    binary_yes: 'Yes'
+    likert_1: 1 - minor
+    likert_2: 2 - somewhat
+    likert_3: 3 - a lot
+    textbox_placeholder: Write your answer...
+  typology:
+    context_label: Context
+    edit_unit_name: edit
+    edits_unit_name: edits
+    source_label: Source
+    span_unit_name: span
+    spans_unit_name: spans
+    target_label: Target
+prolific_completion_code: CKF6ZEVF
+template_description: English Neologism translation quality inspection
+template_label: Neologism MT Using Thresh
+template_name: Neologism MT Using Thresh
