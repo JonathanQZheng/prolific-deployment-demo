@@ -1,5 +1,5 @@
 crowdsource: "prolific"                 
-prolific_completion_code: "C10MIQTH" 
+prolific_completion_code: "CKF6ZEVF" 
 
 template_name: Neologism MT Using Thresh
 template_label: Neologism MT Using Thresh
@@ -11,7 +11,7 @@ database:
   url: https://mt-translation-f3caa.firebaseio.com/
   collection: thresh      # (default: thresh) The database to use, this must exist on the firestore
   document: annotations    # (default: annotation) The document to use, this must exist on the firestore
-  field: main_s1p1 
+  field: annotation_set_1 
 
 instructions: |
   ## Neologism translation evaluation
