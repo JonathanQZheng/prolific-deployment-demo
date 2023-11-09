@@ -10,7 +10,7 @@ database:
   project_id: mt-translation-f3caa
   url: https://mt-translation-f3caa.firebaseio.com/
   collection: thresh      # (default: thresh) The database to use, this must exist on the firestore
-  document: annotation    # (default: annotation) The document to use, this must exist on the firestore
+  document: annotations    # (default: annotation) The document to use, this must exist on the firestore
   field: main_s1p1 
 
 instructions: |
